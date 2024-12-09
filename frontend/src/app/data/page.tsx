@@ -40,7 +40,7 @@ export default function DataPage() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-start bg-gray-100">
+    <div className="flex flex-col items-center justify-start">
       <h1 className="text-3xl font-bold text-gray-800 mt-20">Data Page</h1>
       {loading && <p className="text-gray-500 pt-5">Loading...</p>}
       {error && <p className="text-red-500 pt-5">{error}</p>}
