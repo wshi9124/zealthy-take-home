@@ -4,6 +4,19 @@ import { useRouter } from "next/navigation";
 import { useUser } from "../UserContext";
 import OnboardForm from "../components/form/onboard-form";
 
+interface User {
+  id: number;
+  email: string;
+  about_me: string | null;
+  street_address: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
+  birthdate: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export default function HomePage() {
   const { currentUser, setCurrentUser } = useUser();
   const router = useRouter();
@@ -17,7 +30,7 @@ export default function HomePage() {
   // Check if any user fields are null or empty
   const isUserIncomplete = () => {
     if (!currentUser) return true; // No user means incomplete
-    const requiredFields = [
+    const requiredFields: (keyof User)[] = [
       "about_me",
       "street_address",
       "city",
@@ -25,9 +38,10 @@ export default function HomePage() {
       "zip",
       "birthdate",
     ];
-    return requiredFields.some(
-      (field) => !currentUser[field] || currentUser[field].trim() === ""
-    );
+    return requiredFields.some((field) => {
+      const value = currentUser[field];
+      return !value || (typeof value === "string" && value.trim() === "");
+    });
   };
 
   if (isUserIncomplete()) {
