@@ -56,6 +56,7 @@ If the form is already filled out and the page is empty, it will automatically g
 
 <img width="500" alt="Screenshot 2024-12-10 at 1 10 07 PM" src="https://github.com/user-attachments/assets/39ed5833-9683-4a72-8f5b-e06507c271e6">
 
+When all parts of the form is filled out it will show this:
 
 <img width="500" alt="Screenshot 2024-12-10 at 1 13 50 PM" src="https://github.com/user-attachments/assets/0f0cf976-787a-4ab9-b13b-888196c3f597">
 
