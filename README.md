@@ -1,7 +1,7 @@
 # zealthy-take-home
 
 FE technologies- Next.js, Typescript, Tailwind css,
-Backend technologies- Ruby on Rails, Postgresql
+# Backend technologies- Ruby on Rails, Postgresql
 
 Setup:
 Cd into frontend
