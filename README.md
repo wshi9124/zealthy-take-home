@@ -25,17 +25,23 @@ Features:
 
 Login/ sign up
 When logging in, the backend will first check if the user exists and if not it will make a account for them.
+
 Has validations to make sure email adresses is unique
+
 Passwords are encrypt using Bcrypt
 
 <img width="400" alt="Screenshot 2024-12-10 at 12 58 13 PM" src="https://github.com/user-attachments/assets/2ec61f20-1867-4919-82f8-debbc66d8a7d">
 
 Data Page
+
 Basic page that fetches all the users and their info 
+
 <img width="400" alt="Screenshot 2024-12-10 at 1 01 00 PM" src="https://github.com/user-attachments/assets/108f36fe-6f0c-4cb6-a806-d5ae2509d636">
 
 Admin Page
+
 Able to change the components 
+
 <img width="400" alt="Screenshot 2024-12-10 at 1 03 31 PM" src="https://github.com/user-attachments/assets/47fc0c27-ddb1-4510-91c4-5b6af1181ee0">
 
 
