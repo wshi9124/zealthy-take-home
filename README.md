@@ -48,16 +48,15 @@ Will make sure that there are at least one component in each page
 
 Sign Up 
 
+Will show the form based on admin configurations
+
+Will make sure all fields are filled out before user can continue
+
+If the form is already filled out and the page is empty, it will automatically go to the next page
+
 <img width="500" alt="Screenshot 2024-12-10 at 1 10 07 PM" src="https://github.com/user-attachments/assets/39ed5833-9683-4a72-8f5b-e06507c271e6">
 
-
-
-
-
-
-Home route is protected
-
-Has validations that there will be at least one component on each page
+<img width="500" alt="Screenshot 2024-12-10 at 1 13 50 PM" src="https://github.com/user-attachments/assets/0f0cf976-787a-4ab9-b13b-888196c3f597">
 
 fixing edge cases
 made it so that if a component renders users have to move on to fill out form completely before moving on to next step
