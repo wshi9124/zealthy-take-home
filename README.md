@@ -1,6 +1,9 @@
 # zealthy-take-home
 
+[Live Demo](http://54.147.49.13:3000/)
+
 FE technologies- Next.js, Typescript, Tailwind css,
+
 Backend technologies- Ruby on Rails, Postgresql
 
 Setup:
