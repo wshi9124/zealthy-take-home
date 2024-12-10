@@ -1,16 +1,20 @@
 # zealthy-take-home
 
-FE technologies- next.js, typescript, tailwind css,
-Backend technologies- Ruby on Rails
+FE technologies- Next.js, Typescript, Tailwind css,
+Backend technologies- Ruby on Rails, Postgresql
 
-setup:
-cd into frontend
+Setup:
+Cd into frontend
 npm install
 npm run dev
 
-cd into backend
+Cd into backend
 bundle install
+rails db:create
+rails db migrate
 rails s
+
+Schema:
 
 \*\*\*\* Note admin has to first configure a order for the components first before users can onboard
 
