@@ -12,24 +12,35 @@ Cd into backend
 bundle install
 rails db:create
 rails db migrate
-
-<img width="400" alt="Screenshot 2024-12-10 at 12 39 57 PM" src="https://github.com/user-attachments/assets/173b75c3-a2c7-4928-b9a4-5a9d07555750">
-
 rails s
 
 Schema:
+<img width="400" alt="Screenshot 2024-12-10 at 12 39 57 PM" src="https://github.com/user-attachments/assets/173b75c3-a2c7-4928-b9a4-5a9d07555750">
 
-\*\*\*\* Note admin has to first configure a order for the components first before users can onboard
+* Note admin has to first configure a order for the components first before users can onboard 
+or use rails db:seed to seed inital configuration
 
 Features:
-Has validations to make sure email adresses is unique
-Passwords are encrypt using Bcrypt
-Login validates email is a email, if not it will throw a error message
-
-When a user first enters the site, the Rails backend will check if there is a session. If there is, it will automatically log the user in.
 
 Login/ sign up
-Backend will check if the user exists first and if not it will make a account for them
+When logging in, the backend will first check if the user exists and if not it will make a account for them.
+Has validations to make sure email adresses is unique
+Passwords are encrypt using Bcrypt
+
+<img width="400" alt="Screenshot 2024-12-10 at 12 58 13 PM" src="https://github.com/user-attachments/assets/2ec61f20-1867-4919-82f8-debbc66d8a7d">
+
+Data Page
+Basic page that fetches all the users and their info 
+<img width="400" alt="Screenshot 2024-12-10 at 1 01 00 PM" src="https://github.com/user-attachments/assets/108f36fe-6f0c-4cb6-a806-d5ae2509d636">
+
+Admin Page
+Able to change the components 
+<img width="400" alt="Screenshot 2024-12-10 at 1 03 31 PM" src="https://github.com/user-attachments/assets/47fc0c27-ddb1-4510-91c4-5b6af1181ee0">
+
+
+
+
+
 
 Home route is protected
 
