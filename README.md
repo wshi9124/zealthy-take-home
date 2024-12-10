@@ -28,7 +28,7 @@ When logging in, the backend will first check if the user exists and if not it w
 
 Has validations to make sure email adresses is unique
 
-Passwords are encrypt using Bcrypt
+Passwords are encrypted using Bcrypt
 
 <img width="400" alt="Screenshot 2024-12-10 at 12 58 13 PM" src="https://github.com/user-attachments/assets/2ec61f20-1867-4919-82f8-debbc66d8a7d">
 
@@ -40,9 +40,15 @@ Basic page that fetches all the users and their info
 
 Admin Page
 
-Able to change the components 
+Able to change the order of components 
+
+Will make sure that there are at least one component in each page
 
 <img width="400" alt="Screenshot 2024-12-10 at 1 03 31 PM" src="https://github.com/user-attachments/assets/47fc0c27-ddb1-4510-91c4-5b6af1181ee0">
+
+Sign Up 
+
+<img width="500" alt="Screenshot 2024-12-10 at 1 10 07 PM" src="https://github.com/user-attachments/assets/39ed5833-9683-4a72-8f5b-e06507c271e6">
 
 
 
