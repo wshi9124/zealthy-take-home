@@ -12,6 +12,9 @@ Cd into backend
 bundle install
 rails db:create
 rails db migrate
+
+<img width="652" alt="Screenshot 2024-12-10 at 12 39 57 PM" src="https://github.com/user-attachments/assets/173b75c3-a2c7-4928-b9a4-5a9d07555750">
+
 rails s
 
 Schema:
