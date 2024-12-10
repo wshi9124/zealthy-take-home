@@ -14,15 +14,15 @@ rails db:create
 rails db migrate
 rails s
 
-Schema:
+#Schema:
 <img width="400" alt="Screenshot 2024-12-10 at 12 39 57 PM" src="https://github.com/user-attachments/assets/173b75c3-a2c7-4928-b9a4-5a9d07555750">
 
 * Note admin has to first configure a order for the components first before users can onboard 
 or use rails db:seed to seed inital configuration
 
-Features:
+#Features:
 
-Login/ sign up
+#Login/ sign up
 When logging in, the backend will first check if the user exists and if not it will make a account for them.
 Has validations to make sure email adresses is unique
 Passwords are encrypt using Bcrypt
