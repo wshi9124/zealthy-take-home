@@ -46,7 +46,7 @@ export default function AdminPage() {
     }, {} as Record<number, string[]>);
 
     try {
-      const response = await fetch("http://localhost:3002/page_configs", {
+      const response = await fetch("/api/page_config/page-config-create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

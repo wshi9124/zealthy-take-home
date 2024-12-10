@@ -14,6 +14,7 @@ interface PageConfig {
 }
 
 interface User {
+  currentUserId: number | undefined;
   about_me: string | null;
   street_address: string | null;
   city: string | null;
@@ -139,6 +140,7 @@ export default function OnboardForm() {
     }
 
     const updatedUserData: User = {
+      currentUserId: currentUser?.id,
       about_me: aboutMe,
       street_address: streetAddress,
       city: city,
@@ -148,16 +150,13 @@ export default function OnboardForm() {
     };
 
     try {
-      const response = await fetch(
-        `http://localhost:3002/users/${currentUser?.id}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatedUserData),
-        }
-      );
+      const response = await fetch("/api/user/user-update", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedUserData),
+      });
 
       if (response.ok) {
         const updatedUser = await response.json();
