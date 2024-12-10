@@ -15,6 +15,7 @@ rails db migrate
 rails s
 
 #Schema:
+
 <img width="400" alt="Screenshot 2024-12-10 at 12 39 57 PM" src="https://github.com/user-attachments/assets/173b75c3-a2c7-4928-b9a4-5a9d07555750">
 
 * Note admin has to first configure a order for the components first before users can onboard 
