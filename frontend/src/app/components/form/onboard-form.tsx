@@ -1,9 +1,8 @@
 import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@/app/UserContext";
-import AboutMeForm from "./about-me-form";
-import AddressForm from "./address-form";
-import BirthdayForm from "./birthday-form";
+import RenderFormFields from "./render-form-fields";
+import StepIndicatorWizard from "./step-indicator-wizard";
 
 interface PageConfig {
   page: number;
@@ -40,6 +39,27 @@ export default function OnboardForm() {
   const [isSaveButtonDisabled, setIsSaveButtonDisabled] =
     useState<boolean>(true);
   const [errorMessage, setErrorMessage] = useState<string | null>("");
+
+  const renderFormFieldsProps = {
+    components:
+      pageConfigs.find((config) => config.page === pageNumber)?.components ||
+      [],
+    aboutMe,
+    setAboutMe,
+    aboutMeComplete,
+    streetAddress,
+    setStreetAddress,
+    city,
+    setCity,
+    state,
+    setState,
+    zip,
+    setZip,
+    addressComplete,
+    birthdate,
+    setBirthdate,
+    birthdateComplete,
+  };
 
   useEffect(() => {
     const fetchPageConfigs = async () => {
@@ -130,7 +150,6 @@ export default function OnboardForm() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
     // Check if the button is disabled (meaning the form is incomplete)
     if (isSaveButtonDisabled) {
       setErrorMessage(
@@ -215,52 +234,18 @@ export default function OnboardForm() {
     birthdateComplete,
   ]);
 
-  const renderFormFields = () => {
-    const currentPageConfig = pageConfigs.find(
-      (config) => config.page === pageNumber
-    );
-
-    if (!currentPageConfig) {
-      return null;
-    }
-
-    const { components } = currentPageConfig;
-
-    return (
-      <>
-        {components.includes("about_me") && !aboutMeComplete && (
-          <AboutMeForm aboutMe={aboutMe} setAboutMe={setAboutMe} />
-        )}
-        {components.includes("address") && !addressComplete && (
-          <AddressForm
-            streetAddress={streetAddress}
-            setStreetAddress={setStreetAddress}
-            city={city}
-            setCity={setCity}
-            state={state}
-            setState={setState}
-            zip={zip}
-            setZip={setZip}
-          />
-        )}
-        {components.includes("birthdate") && !birthdateComplete && (
-          <BirthdayForm birthdate={birthdate} setBirthdate={setBirthdate} />
-        )}
-      </>
-    );
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-10">
       <h1 className="text-3xl font-bold text-gray-800 pb-6">
         Onboard Form Page {pageNumber}
       </h1>
+      <StepIndicatorWizard pageNumber={pageNumber} pageConfigs={pageConfigs} />
       {errorMessage && <p className="text-red-500 pb-5">{errorMessage}</p>}
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-lg bg-white p-6 rounded-lg shadow-lg"
       >
-        {renderFormFields()}
+        <RenderFormFields {...renderFormFieldsProps} />
         <div className="mb-4">
           <button
             type="submit"

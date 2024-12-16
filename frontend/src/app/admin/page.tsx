@@ -44,10 +44,10 @@ export default function AdminPage() {
       acc[component.page].push(component.name.toLowerCase().replace(" ", "_"));
       return acc;
     }, {} as Record<number, string[]>);
-
+    console.log(pageConfigData);
     try {
-      const response = await fetch("/api/page_config/page-config-create", {
-        method: "POST",
+      const response = await fetch("/api/page_config/page-config-update", {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
