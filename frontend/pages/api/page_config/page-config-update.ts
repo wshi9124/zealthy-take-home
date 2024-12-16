@@ -1,13 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'POST') {
+  if (req.method === 'PUT') {
     try {
       const { page_config } = req.body;
 
-      // Make a POST request to the external service (localhost:3002/page_configs)
       const response = await fetch('http://localhost:3002/page_configs', {
-        method: 'POST',
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
